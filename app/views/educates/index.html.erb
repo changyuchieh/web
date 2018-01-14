@@ -1,16 +1,24 @@
 
 <div style="margin:0 auto;width:100%;font-family:Microsoft JhengHei;">
   <div style="float:left;width:20%;height: auto;">
+<<<<<<< HEAD
 
     <div style="margin-top:10%;background-color:#1BC005;padding: 5% 4%;font-size:36px;font-weight:bold;font-size:30px">生活環保</div>
 
     <div style="background-color: #E2F8B5;line-height: 150%;padding-top:5%;padding-bottom:5%;text-align:center;font-size:24px;text-decoration:none;">
+=======
+    
+    <div style="background-color:#1BC005;padding: 5% 4%;font-size:36px;font-weight:bold;font-size:30px">生活環保</div>
+       
+    <div style="background-color:#E2F8B5;text-decoration:none;line-height: 150%;padding-top:5%;padding-bottom:5%;text-align:center;font-size:24px;text-decoration:none;">
+>>>>>>> origin/master
       <%= link_to "食環保", '#' %><br/>
       <%= link_to "住環保", '#' %></br>
       <%= link_to "行環保", '#' %></br>
       <%= link_to "育環保", '#' %>
     </div>
   </div>
+<<<<<<< HEAD
 
 
   <div style="font-family:Microsoft JhengHei;margin-left:25%;width:70%;background-color:#E2F8B5;padding-bottom:5%">
@@ -37,3 +45,19 @@
     </div>
   </div>
 </div>
+=======
+  <div style="background-color:#E2F8B5;width:75%;height: auto;font-size: 18px;margin-left:25%">
+    <% @educates.each do |educate| %>
+   
+    <%= educate.title%>
+    <%= educate.source %>
+    <%= educate.category %>
+    <%= educate.movie_link %>
+    <%= educate.content %>
+    <% end %>
+    123
+  </div>     
+</div>
+        
+          
+>>>>>>> origin/master
