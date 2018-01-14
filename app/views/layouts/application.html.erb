@@ -3,13 +3,15 @@
   <head>
     <title>Web</title>
     <%= csrf_meta_tags %>
-
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>

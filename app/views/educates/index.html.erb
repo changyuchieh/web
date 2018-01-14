@@ -1,8 +1,9 @@
-<div style="margin:0 auto;width:95%;overflow:auto;font-family:Microsoft JhengHei;">
+
+<div style="margin:0 auto;width:100%;font-family:Microsoft JhengHei;">
   <div style="float:left;width:20%;height: auto;">
-    
-    <div style="background-color:#1BC005;padding: 5% 4%;font-size:36px;font-weight:bold;font-size:30px">生活環保</div>
-       
+
+    <div style="margin-top:10%;background-color:#1BC005;padding: 5% 4%;font-size:36px;font-weight:bold;font-size:30px">生活環保</div>
+
     <div style="background-color: #E2F8B5;line-height: 150%;padding-top:5%;padding-bottom:5%;text-align:center;font-size:24px;text-decoration:none;">
       <%= link_to "食環保", '#' %><br/>
       <%= link_to "住環保", '#' %></br>
@@ -10,14 +11,29 @@
       <%= link_to "育環保", '#' %>
     </div>
   </div>
+
+
+  <div style="font-family:Microsoft JhengHei;margin-left:25%;width:70%;background-color:#E2F8B5;padding-bottom:5%">
+    <div style="padding:3% 5%">
+
+      <%= link_to "氣候變遷", '#', class:"btn btn-primary btn-lg" %>
+      <%= link_to "海洋危機", '#', class:"btn btn-danger btn-lg" %>
+      <%= link_to "塑化危機", '#', class:"btn btn-warning btn-lg" %>
+      <%= link_to "公害污染", '#', class:"btn btn-success btn-lg" %>
+    </div>
+
+    <div style="font-size: 17px;padding-left:2%;padding-top:3%;padding-right:3%">
+      <% @educates.each do |educate| %>
+      <%= image_tag(educate.photo_url, width: "40%", alt: "educate.category",:style => "padding-top:5%;padding-left:3%;padding-right:3%;float:left;height:auto;" ) %>
+      
+
+      <p style="padding-top:5%;font-size:19px;font-weight:bold">【<%= link_to educate.title, educate_path(educate.id), style: "text-decoration:none;color:#000000;"%>】</p>
+      <p style="font-weight:bold">來源:&nbsp<%= educate.source %>&nbsp;&nbsp;&nbsp;類別:&nbsp;<%= educate.category %></P>
+        <div style="width:50%;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">
+          <%= educate.content %>
+        </div>
+        <p style="padding-bottom:2%;margin-left:85%"><%= link_to "閱讀更多", educate_path(educate.id), style: "text-decoration:none;color:#666666;" %></p>
+      <% end %>
+    </div>
+  </div>
 </div>
-<div id="CONTENT">
-  <% @educates.each do |educate| %>
-  <%= educate.title%>
-  <%= educate.source %>
-  <%= educate.category %>
-  <%= educate.movie_link %>
-  <% end %>
-</div>     
-          
-          
