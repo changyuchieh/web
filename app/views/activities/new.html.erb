@@ -1,3 +1,6 @@
+<!-- require File.expand_path("../doAction.php", __FILE__)
+require File.expand_path("../uploadfunc.php", __FILE__)
+require File.expand_path("../upload.php", __FILE__) -->
 
 <div style="margin:0 auto;width:100%;font-family:Microsoft JhengHei;">
   <div style="float:left;width:20%;height: auto;">
@@ -12,27 +15,15 @@
     </div>
   </div>
 </div>
+<div style="font-family:Microsoft JhengHei;margin-left:25%;width:70%;background-color:#E2F8B5;padding:2% 3%">
 
-  <h1>新增候選人</h1>
+  <h1>新增活動</h1>
 
-<%= form_for(@activity) do |f| %>
-<%= f.label :title, "活動標題" %>
-<%= f.text_field :title %> <br />
+  <%= render "form" %>
 
-<%= f.label :category, "活動類別" %>
-<%= f.text_field :category %> <br />
 
-<%= f.label :content, "活動內文" %>
-<%= f.text_area :content %> <br />
+    <br />
+    <%= link_to '回活動清單頁面', activities_path, style:"color:#666666;" %></p>
 
-<%= f.label :place, "活動地點" %>
-<%= f.text_area :place %> <br />
 
-<%= f.label :photo, "活動相關照片" %>
-<%= f.text_field :photo %> <br />
-
-<%= f.submit %>
-<% end %>
-
-<br />
-<%= link_to '回候選人列表', '#' %>
+  </div>

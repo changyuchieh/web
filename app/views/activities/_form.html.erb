@@ -1,0 +1,21 @@
+
+<%= form_for(@activity) do |f| %>
+<%= f.label :title, "活動標題" %>
+<%= f.text_field :title %> <br />
+
+<%= f.label :category, "活動類別" %>
+<%= f.text_field :category %> <br />
+
+<%= f.label :place, "活動地點" %>
+<%= f.text_field :place %> <br />
+
+<%= f.label :content, "活動內容" %>
+<%= f.text_area :content %> <br />
+
+<%= f.label :avatar, "活動照片" %>
+<%= f.file_field :avatar %> <br />
+
+
+
+<p style="margin-left:5%%; padding-top:1%"><%= f.submit %></p>
+<% end %>

@@ -8,10 +8,10 @@ class Member < ApplicationRecord
   has_many :product, through: :collections
 
 
-
-#   has_many :activity
-  has_many :participates
-  has_many :activity, through: :participates
-
   has_many :activities
+
+  has_one :participate
+
+
+
 end

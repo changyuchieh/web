@@ -15,17 +15,21 @@
   <div style="font-family:Microsoft JhengHei;margin-left:25%;width:70%;background-color:#E2F8B5;padding-bottom:5%">
 
     <div style="font-size: 17px;padding:3% 3% 0 2%">
-      <%= link_to "新增活動 ", '#', class:"btn btn-primary btn-lg" %>
+      <%= link_to "新增活動 ", new_activity_path, class:"btn btn-primary btn-lg", style:"margin-left:80%" %>
 
       <% @activities.each do |activity| %>
-      <%= image_tag(activity.photo , width: "40%", alt: activity.category,:style => "padding-top:5%;padding-left:3%;padding-right:3%;float:left;height:auto;" ) %>
+      <%= image_tag(activity.photo, width: "40%", alt: "activity.category",:style => "padding-top:5%;padding-left:3%;padding-right:3%;float:left;height:auto;" ) %>
 
-      <p style="padding-top:5%;font-size:19px;font-weight:bold">【<%= link_to activity.title, '#', style: "text-decoration:none;color:#000000;"%>】</p>
+      <p style="padding-top:5%;font-size:19px;font-weight:bold">【<%= activity.title%>】</p>
       <p style="font-weight:bold">類別:&nbsp;<%= activity.category %></P>
-        <div style="width:50%;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">
-          <%= activity.content %>
+      <p style="font-weight:bold"> 地點:&nbsp;<%= activity.place %></p>
+        <div style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;overflow: hidden;">
+          <br><%= activity.content %>
+
         </div>
-        <p style="padding-bottom:2%;margin-left:85%"><%= link_to "閱讀更多", '#', style: "text-decoration:none;color:#666666;" %></p>
+        <p style="margin-left:80%;padding-top:1%"><%= link_to "收藏", '#',class:"btn btn-warning btn-lg", style: "text-decoration:none;color:#666666;" %></p>
+        <p style="margin-left:80%;" ><%= link_to "參加", participate_activity_path(activity), method: "post",class:"btn btn-success btn-lg", style: "text-decoration:none;", data: { confirm: "確定參加活動?" } %>
+        <%= activity.participate_logs.size%></p>
       <% end %>
     </div>
   </div>

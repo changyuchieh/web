@@ -1,4 +1,7 @@
 class Participate < ApplicationRecord
   belongs_to :member
-  belongs_to :activity
+
+  has_many :activities
+
+  
 end
